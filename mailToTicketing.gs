@@ -7,7 +7,9 @@ function zendeskMail() {
  var firstThread = GmailApp.getInboxThreads(0,1)[0];
  // Get the same thread by ID
  var threadById = GmailApp.getThreadById(firstThread.getId());
-  for (var i = 0; i < threads.length; >= 2) {
+  // Verify they're the same
+ Logger.log(firstThread.getFirstMessageSubject() == threadById.getFirstMessageSubject());
+  for (var i = 0; i < threads.length; i++) {
     if (threads[i].getLastMessageDate()<maxDate)
       {
         threads[i].moveToArchive();
