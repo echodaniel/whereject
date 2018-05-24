@@ -1,6 +1,6 @@
 function zendeskMail() {
 // Number of minutes before messages are sent to Archive
-  var delayMinutes = 1; 
+  var delayMinutes = 1 
 // Time filter. maxDate is the maximum time allowed to pass before delayMinutes goes into effect.
   var maxDate = new Date();
 // new Date grabs today's current date to measure for the time condition.
@@ -15,7 +15,9 @@ function zendeskMail() {
   Logger.log(firstThread.getFirstMessageSubject() == threadById.getFirstMessageSubject());
 // Get only those with more than 2 emails in thread
   var threads = GmailApp.getInboxThreads();
-  for (var i = 0; i < threads.length; i++) {
+  Utilities.sleep(1000); // Pause the function for 1000 milliseconds to avoid 'service invoked too many
+                         // times error.
+  for (var i = 1; i < threads.length; i++) {
     if (threads[i].getLastMessageDate()<maxDate)
       {
         threads[i].moveToArchive();
