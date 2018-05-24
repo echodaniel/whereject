@@ -4,7 +4,7 @@ function zendeskMail() {
   maxDate.setDate(maxDate.getDate()-delayMinutes);
   // This is the label that the script will look for.
   var label = GmailApp.getUserLabelByName("Send To Zendesk Test Script");
-  // Thread IDs can be found in the URL, ie mail.google.com/mail/u/0/#search/failed+call/{ThreadIDhere}
+  // Thread IDs can be found in the URL, ie mail.google.com/mail/u/0/#search/search+filter/{ThreadIDhere}
   var firstThread = GmailApp.getInboxThreads(0,1)[0];
  // Get the same thread by ID
   var threadById = GmailApp.getThreadById(firstThread.getId());
