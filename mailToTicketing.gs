@@ -1,6 +1,6 @@
 function zendeskMail() {
   var label = 'Send To Zendesk';
-  var recipient = 'help@echoitconsult.com';
+  var recipient = 'email@yourdomain.com';
   var interval = 10;          //  script runs (forwards emails) every 10 minutes
   var date = new Date();
   var timeFrom = Math.floor(date.valueOf()/1000) - 60 * interval;
